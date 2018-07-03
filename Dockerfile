@@ -5,12 +5,16 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # Install PHP extensions
-RUN apt-get update && apt-get install -yq imagemagick zlib1g-dev
+RUN apt-get update && apt-get install -yq libmagickwand-dev zlib1g-dev
 RUN apt-get install -yq libpq-dev
+RUN pecl install imagick \
+    && docker-php-ext-enable imagick.so
 RUN docker-php-ext-install -j$(nproc) zip \
+    && docker-php-ext-install -j$(nproc) bcmath \
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install -j$(nproc) exif \
     && docker-php-ext-install -j$(nproc) pgsql \
-    && docker-php-ext-install -j$(nproc) pdo_pgsql \
-    && docker-php-ext-install -j$(nproc) exif
+    && docker-php-ext-install -j$(nproc) pdo_pgsql
 
 # Install Node 8, NPM et al
 RUN apt-get update && apt-get install -yq gnupg2 \
