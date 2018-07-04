@@ -20,4 +20,4 @@
 - exif
 - pgsql
 - pdo_pgsql
-- xdebug
+- xdebug (disabled by default, enable with `docker-php-ext-enable xdebug.so`)

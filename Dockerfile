@@ -15,8 +15,7 @@ RUN docker-php-ext-install -j$(nproc) zip \
     && docker-php-ext-install -j$(nproc) exif \
     && docker-php-ext-install -j$(nproc) pgsql \
     && docker-php-ext-install -j$(nproc) pdo_pgsql
-RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug.so
+RUN pecl install xdebug
 
 # Install Node 8, NPM et al
 RUN apt-get update && apt-get install -yq gnupg2 \
