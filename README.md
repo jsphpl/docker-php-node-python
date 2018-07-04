@@ -1,5 +1,8 @@
 # docker-php-node-python
 
+**Tag:** `jsphpl/php-node-docker`
+**Base Image:** `php:7.1-cli`
+
 ## A Docker image featuring
 - php 7.1
 - composer
@@ -17,3 +20,4 @@
 - exif
 - pgsql
 - pdo_pgsql
+- xdebug
