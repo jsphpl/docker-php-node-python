@@ -1,10 +1,10 @@
 # docker-php-node-python
 
-**Tag:** `jsphpl/php-node-docker:7.1` or `jsphpl/php-node-docker:7.2`<br/>
+**Tag:** `jsphpl/php-node-docker:7.1`, `jsphpl/php-node-docker:7.2` or `jsphpl/php-node-docker:7.3-rc`<br/>
 **Base Image:** `php:7.x-cli`
 
 ## A Docker image featuring
-- php 7.1 or 7.2
+- php 7.1, 7.2 or 7.3-rc
 - composer
 - node 8
 - npm
@@ -16,7 +16,7 @@
 - imagick
 - zip
 - bcmath
-- gd
+- gd (with jpeg & png support)
 - exif
 - pgsql
 - pdo_pgsql
