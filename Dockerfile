@@ -6,7 +6,7 @@ RUN mv composer.phar /usr/local/bin/composer
 
 
 # Install PHP extensions
-RUN apt-get update && apt-get install -yq libmagickwand-dev zlib1g-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev libpq-dev
+RUN apt-get update && apt-get install -yq libmagickwand-dev zlib1g-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev libpq-dev libzip-dev
 RUN pecl install imagick \
     && docker-php-ext-enable imagick.so
 RUN docker-php-ext-install -j$(nproc) zip \
