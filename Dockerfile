@@ -1,4 +1,4 @@
-FROM php:7.2-cli
+FROM php:7.3-rc-cli
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php
