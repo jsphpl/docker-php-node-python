@@ -6,9 +6,9 @@ RUN mv composer.phar /usr/local/bin/composer
 
 
 # Install PHP extensions
-RUN apt-get update && apt-get install -yq libmagickwand-dev zlib1g-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev libpq-dev libzip-dev
+RUN apt-get update && apt-get install -yq unzip libmagickwand-dev zlib1g-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev libpq-dev libzip-dev
 RUN pecl install imagick \
-    && docker-php-ext-enable imagick.so
+    && docker-php-ext-enable imagick
 RUN docker-php-ext-install -j$(nproc) zip \
     && docker-php-ext-install -j$(nproc) bcmath \
     && docker-php-ext-install -j$(nproc) iconv \
@@ -24,8 +24,12 @@ RUN pecl install xdebug
 RUN apt-get update && apt-get install -yq gnupg2 \
     && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     && apt-get install -y nodejs
-RUN npm install -g yarn
 
 
 # Install python
 RUN apt-get update && apt-get install -y python python-pip git rsync
+
+
+# Install global composer packages
+RUN composer global require hirak/prestissimo \
+    && composer global dumpautoload --optimize
