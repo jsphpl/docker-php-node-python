@@ -1,10 +1,10 @@
 # docker-php-node-python
 
-**Tag:** `jsphpl/php-node-docker:7.1`, `jsphpl/php-node-docker:7.2` or `jsphpl/php-node-docker:7.3-rc`<br/>
+**Tag:** `jsphpl/php-node-docker:7.1`, `jsphpl/php-node-docker:7.2` or `jsphpl/php-node-docker:7.3`<br/>
 **Base Image:** `php:7.x-cli`
 
 ## A Docker image featuring
-- php 7.1, 7.2 or 7.3-rc
+- php 7.1, 7.2 or 7.3
 - composer
 - node 8
 - npm
