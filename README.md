@@ -6,7 +6,7 @@
 ## A Docker image featuring
 - php 7.4, 7.3, 7.2 or 7.1
 - composer
-- node 8
+- node 12
 - npm
 - yarn
 - python 2.7

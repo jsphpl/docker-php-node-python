@@ -1,4 +1,4 @@
-FROM php:7.3-cli
+FROM php:7.4-cli
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php
@@ -12,7 +12,6 @@ RUN pecl install imagick \
 RUN docker-php-ext-install -j$(nproc) zip \
     && docker-php-ext-install -j$(nproc) bcmath \
     && docker-php-ext-install -j$(nproc) iconv \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install -j$(nproc) exif \
     && docker-php-ext-install -j$(nproc) pgsql \
@@ -22,7 +21,7 @@ RUN pecl install xdebug
 
 # Install Node 8, NPM et al
 RUN apt-get update && apt-get install -yq gnupg2 \
-    && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+    && curl -sL https://deb.nodesource.com/setup_13.x | bash - \
     && apt-get install -y nodejs
 
 
